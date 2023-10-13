@@ -5,6 +5,7 @@ const SuperheroList = () => {
   const [superheroes, setSuperheroes] = useState([]);
 
   useEffect(() => {
+    // Fetch superheroes from the backend
     axios.get('http://localhost:5000/superheroes')
       .then(response => {
         setSuperheroes(response.data.superheroes);
@@ -14,10 +15,10 @@ const SuperheroList = () => {
 
   return (
     <div>
-      <h1>Superheroes List</h1>
+      <h2>Superheroes List</h2>
       <ul>
-        {superheroes.map((hero, index) => (
-          <li key={index}>{hero.name} - Powers: {hero.powers}, Avenger: {hero.is_avenger ? 'Yes' : 'No'}</li>
+        {superheroes.map((hero) => (
+          <li key={hero.id}>{hero.name} - Powers: {hero.powers}</li>
         ))}
       </ul>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SuperheroList from './components/SuperHeroList';
+import HeroForm from './components/HeroForm';  
 
 function App() {
   const [superheroes, setSuperheroes] = useState([]);
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <h1>Superheroes App</h1>
       <SuperheroList superheroes={superheroes} />
+      <HeroForm />  {/* Include the HeroForm component for hero submission */}
     </div>
   );
 }
